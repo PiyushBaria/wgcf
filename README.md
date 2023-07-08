@@ -17,7 +17,39 @@
 You can find pre-compiled binaries on the [releases page](https://github.com/ViRb3/wgcf/releases).
 
 ## Usage
-Run `wgcf` in a terminal without any arguments to display the help screen. All commands and parameters are documented.
+
+### Run these commands in a terminal
+  ```bash
+sudo apt update
+```
+```bash
+sudo apt install wireguard
+```
+use ```wg-quick```to see if wireguard installed or not
+
+### Download the Linux AMD64 binary(wgcf_x.x.x_linux_amd640) from release page
+
+### Open the terminal and go to the downloads folder:
+```bash
+cd /Downloads
+```
+### Make a new directory:
+```bash
+mkdir cloudflare
+```
+### Move the binary into the cloudflare folder and make it executable
+```bash
+mv wgcf_2.1.4_linux_amd64 ./cloudflare/wgcf
+```
+```bash
+cd ./cloudflare
+```
+```bash
+chmod +x wgcf
+```
+
+  
+Run `./wgcf` in a terminal without any arguments to display the help screen. All commands and parameters are documented.
 
 ### Register new account
 Run the following command in a terminal:
