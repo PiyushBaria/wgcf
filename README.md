@@ -1,3 +1,4 @@
+### I forked this repository for personal use and added steps from other sources to make it easier to use on Linux.
 # wgcf
 > wgcf is an unofficial, cross-platform CLI for [Cloudflare Warp](https://1.1.1.1/)
 
@@ -48,10 +49,8 @@ cd ./cloudflare
 chmod +x wgcf
 ```
 
-
-
 ### Register new account
-Run the following command in a terminal:
+Make sure you're in cloudflare directory and run the following command in a terminal:
 ```bash
 ./wgcf register
 ```
@@ -63,7 +62,26 @@ Run the following command in a terminal:
 ```bash
 ./wgcf generate
 ```
-The WireGuard profile will be saved under `wgcf-profile.conf`. For more information on how to use it, please check the official [WireGuard Quick Start](https://www.wireguard.com/quickstart/).
+The WireGuard profile will be saved under `wgcf-profile.conf`.
+Now, copy the file wgcf-profile.conf into the wireguard configuration folder:
+```bash
+sudo cp wgcf-profile.conf /etc/wireguard/
+```
+
+## To connect VPN open the terminal and run 
+```bash
+sudo wg-quick up wgcf-profile
+```
+and to disconnect run
+```bash
+sudo wg-quick down wgcf-profile
+```
+install ```resolvconf``` if you found any problem and try again
+```bash
+sudo apt install resolvconf
+```
+and you're good to go!!
+For more information on how to use it, please check the official [WireGuard Quick Start](https://www.wireguard.com/quickstart/).
 
 #### Maximum transmission unit (MTU)
 To ensure maximum compatibility, the generated profile will have a MTU of 1280, just like the official Android app. If you are experiencing performance issues, you may be able to improve your speed by increasing this value. For more information, please check [#40](https://github.com/ViRb3/wgcf/issues/40).
@@ -120,6 +138,10 @@ To regenerate the Go client API code, [install openapi-generator](https://openap
 bash generate-api.sh
 ```
 This script supports both Linux and WSL.
+
+## Credits
+https://www.techzim.co.zw/2020/12/how-to-use-cloudflares-warp-vpn-on-ubuntu-linux/
+
 
 ## Notice of Non-Affiliation and Disclaimer
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Cloudflare, or any of its subsidiaries or its affiliates. The official Cloudflare website can be found at https://www.cloudflare.com/.
