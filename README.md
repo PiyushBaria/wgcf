@@ -18,7 +18,7 @@ You can find pre-compiled binaries on the [releases page](https://github.com/ViR
 
 ## Usage
 
-### Run these commands in a terminal
+## Run these commands in a terminal
   ```bash
 sudo apt update
 ```
@@ -27,17 +27,17 @@ sudo apt install wireguard
 ```
 use ```wg-quick```to see if wireguard installed or not
 
-### Download the Linux AMD64 binary(wgcf_x.x.x_linux_amd640) from release page
+## Download the Linux AMD64 binary(wgcf_x.x.x_linux_amd640) from release page
 
-### Open the terminal and go to the downloads folder:
+## Open the terminal and go to the downloads folder:
 ```bash
 cd /Downloads
 ```
-### Make a new directory:
+## Make a new directory:
 ```bash
 mkdir cloudflare
 ```
-### Move the binary into the cloudflare folder and make it executable
+## Move the binary into the cloudflare folder and make it executable
 ```bash
 mv wgcf_2.1.4_linux_amd64 ./cloudflare/wgcf
 ```
@@ -48,20 +48,20 @@ cd ./cloudflare
 chmod +x wgcf
 ```
 
-  
-Run `./wgcf` in a terminal without any arguments to display the help screen. All commands and parameters are documented.
+
 
 ### Register new account
 Run the following command in a terminal:
 ```bash
-wgcf register
+./wgcf register
 ```
+Accept Cloudflare’s Terms and conditions
 The new account will be saved under `wgcf-account.toml`
 
 ### Generate WireGuard profile
 Run the following command in a terminal:
 ```bash
-wgcf generate
+./wgcf generate
 ```
 The WireGuard profile will be saved under `wgcf-profile.conf`. For more information on how to use it, please check the official [WireGuard Quick Start](https://www.wireguard.com/quickstart/).
 
@@ -80,7 +80,7 @@ First, get your Warp+ account license key. To view it on Android:
 
 Edit `wgcf-account.toml` directly with the new license key and run:
 ```bash
-wgcf update
+./wgcf update
 ```
 or, using an environment variable:
 ```bash
@@ -92,13 +92,13 @@ The license will be applied, and a new private key will be created for your acco
 ### Check device status
 Run the following command in a terminal:
 ```bash
-wgcf status
+./wgcf status
 ```
 
 ### Verify Warp/Warp+ works
 Connect to the WireGuard profile [generated](#generate-wireguard-profile) by this tool, then run:
 ```bash
-wgcf trace
+./wgcf trace
 ```
 If you look at the last line, it should say `warp=on` or `warp=plus`, depending on whether you have Warp or Warp+ respectively.
 
