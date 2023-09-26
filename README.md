@@ -1,4 +1,4 @@
-### I forked this repository for personal use and added steps from other sources to make it easier to use on Linux.
+### I forked this repository for personal use and added additional steps from other sources to make it easier to use it on Linux.
 # wgcf
 > wgcf is an unofficial, cross-platform CLI for [Cloudflare Warp](https://1.1.1.1/)
 
